@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Опрос РЖД</string>
+    <string name="title_activity_main">Опрос РЖД</string>
+    <string name="package_name">com.rzd.survey</string>
+    <string name="custom_url_scheme">com.rzd.survey</string>
+</resources>

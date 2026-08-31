@@ -1,0 +1,621 @@
+:root {
+    --primary-color: #E21A1A;
+    --secondary-color: #333333;
+    --background-color: #F5F5F5;
+    --card-background: #FFFFFF;
+    --text-color: #333333;
+    --success-color: #4CAF50;
+    --warning-color: #FF9800;
+    --danger-color: #F44336;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Стили для заставки */
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.5s;
+}
+
+.splash-content {
+    text-align: center;
+    color: white;
+}
+
+.splash-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.splash-logo-circle {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    box-shadow: 
+        0 5px 20px rgba(0, 0, 0, 0.4),
+        0 0 0 3px rgba(255, 255, 255, 0.1);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 
+            0 5px 20px rgba(0, 0, 0, 0.4),
+            0 0 0 3px rgba(255, 255, 255, 0.1);
+    }
+    50% {
+        box-shadow: 
+            0 5px 20px rgba(0, 0, 0, 0.4),
+            0 0 0 8px rgba(255, 255, 255, 0.15);
+    }
+}
+
+.splash-logo-img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.splash-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 15px 0 10px;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.splash-subtitle {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 25px;
+}
+
+.splash-loader {
+    width: 180px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    margin: 0 auto 15px;
+    overflow: hidden;
+}
+
+.loader-bar {
+    width: 50%;
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 2px;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(200%);
+    }
+}
+
+.splash-loading-text {
+    color: #999;
+    font-size: 14px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Стили для формы логина сотрудника */
+.login-form-container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.login-form-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.login-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.login-logo-circle {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    box-shadow: 
+        0 3px 15px rgba(0, 0, 0, 0.2),
+        0 0 0 2px rgba(226, 26, 26, 0.1);
+    transition: all 0.3s;
+}
+
+.login-logo-circle:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 5px 20px rgba(0, 0, 0, 0.3),
+        0 0 0 4px rgba(226, 26, 26, 0.2);
+}
+
+.login-logo-img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.login-form-header h1 {
+    color: var(--primary-color);
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.login-form-header p {
+    color: #666;
+    font-size: 14px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 300px;
+}
+
+.btn:hover {
+    background-color: #c41717;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.admin-link {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.admin-link a {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.admin-link a:hover {
+    color: var(--primary-color);
+}
+
+/* Стили для меню */
+.menu-container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.menu-user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-avatar {
+    font-size: 35px;
+    background: #f0f0f0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.menu-user-info h3 {
+    margin: 0;
+    color: #333;
+}
+
+.menu-user-info p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.btn-logout {
+    background: transparent;
+    border: 2px solid #dc3545;
+    color: #dc3545;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.btn-logout:hover {
+    background: #dc3545;
+    color: white;
+}
+
+.menu-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Список опросов */
+.survey-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.survey-list-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    transition: all 0.3s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.survey-list-item.available {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border: 2px solid #e0e0e0;
+}
+
+.survey-list-item.available:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(226, 26, 26, 0.15);
+}
+
+.survey-list-item.completed {
+    background: #f0f9f0;
+    border: 2px solid #c8e6c9;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.survey-status-icon {
+    font-size: 30px;
+    min-width: 45px;
+    text-align: center;
+}
+
+.survey-info {
+    flex: 1;
+}
+
+.survey-info h3 {
+    margin: 0 0 5px 0;
+    color: #333;
+    font-size: 18px;
+}
+
+.survey-info p {
+    margin: 0 0 10px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.survey-status {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-available {
+    background: #fff3e0;
+    color: #ff9800;
+    border: 1px solid #ffcc80;
+}
+
+.status-completed {
+    background: #e8f5e9;
+    color: #4caf50;
+    border: 1px solid #a5d6a7;
+}
+
+.survey-arrow {
+    font-size: 24px;
+    color: var(--primary-color);
+    transition: transform 0.3s;
+}
+
+.survey-list-item.available:hover .survey-arrow {
+    transform: translateX(5px);
+}
+
+/* Стили для формы опроса */
+.survey-form {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.btn-back {
+    background: transparent;
+    border: none;
+    color: #666;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+    margin-bottom: 20px;
+}
+
+.btn-back:hover {
+    color: var(--primary-color);
+    transform: translateX(-5px);
+}
+
+.survey-header {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.user-info {
+    margin-top: 10px;
+}
+
+.question-text {
+    font-weight: 600;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #fff3f3;
+    border-left: 4px solid var(--primary-color);
+    border-radius: 5px;
+}
+
+.factor-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.factor-name {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.rating-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rating-slider {
+    flex: 1;
+    -webkit-appearance: none;
+    height: 8px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #ff4444, #ffaa00, #44bb44);
+    outline: none;
+}
+
+.rating-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    cursor: pointer;
+}
+
+.rating-value {
+    min-width: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 5px;
+}
+
+.rating-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #999;
+}
+
+.button-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Сообщение о завершении */
+.completion-message {
+    text-align: center;
+    padding: 40px;
+}
+
+.completion-message h2 {
+    color: var(--success-color);
+    margin-bottom: 20px;
+}
+
+.completion-message p {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.completion-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .survey-form {
+        padding: 20px;
+    }
+    
+    .factor-item {
+        padding: 15px;
+    }
+    
+    .splash-title {
+        font-size: 22px;
+    }
+    
+    .splash-logo-circle {
+        width: 80px;
+        height: 80px;
+        padding: 12px;
+    }
+    
+    .splash-logo-img {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .login-form-container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+    
+    .menu-container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+    
+    .menu-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .menu-user-info {
+        flex-direction: column;
+    }
+    
+    .survey-list-item {
+        flex-direction: column;
+        text-align: center;
+    }
+}
