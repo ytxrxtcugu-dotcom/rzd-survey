@@ -1,5 +1,9 @@
 {
   "appId": "com.rzd.survey",
   "appName": "Опрос РЖД",
-  "webDir": "frontend"
+  "webDir": "frontend",
+  "server": {
+    "androidScheme": "https",
+    "cleartext": true
+  }
 }
