@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель администратора - Опрос РЖД</title>
+    <link rel="stylesheet" href="admin-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Шапка -->
+        <header class="admin-header">
+            <div class="header-left">
+                <div class="logo">🚂 РЖД</div>
+                <div>
+                    <h1>Панель администратора</h1>
+                    <p>Аналитика удовлетворенности работой</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="btn-export" onclick="exportData()">📥 Экспорт данных</button>
+            </div>
+        </header>
+
+        <!-- Сводные метрики -->
+        <div class="metrics-grid" id="metrics">
+            <div class="metric-card">
+                <div class="metric-icon">👥</div>
+                <div class="metric-info">
+                    <h3>Всего опросов</h3>
+                    <p class="metric-value" id="totalSurveys">0</p>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-icon">⭐</div>
+                <div class="metric-info">
+                    <h3>Средний балл</h3>
+                    <p class="metric-value" id="averageScore">0/10</p>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-icon">⚠️</div>
+                <div class="metric-info">
+                    <h3>Красные зоны</h3>
+                    <p class="metric-value" id="dangerZonesCount">0</p>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-icon">📈</div>
+                <div class="metric-info">
+                    <h3>Удовлетворенность</h3>
+                    <p class="metric-value" id="satisfactionPercent">0%</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Графики -->
+        <div class="charts-grid">
+            <div class="chart-card">
+                <h3>📊 Оценки по факторам</h3>
+                <canvas id="factorsChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>📈 Динамика опросов</h3>
+                <canvas id="trendChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Красные зоны -->
+        <div class="danger-zones-section" id="dangerZonesSection">
+            <h2>🚨 Факторы в красной зоне (менее 50%)</h2>
+            <div id="dangerZonesList"></div>
+        </div>
+
+        <!-- Список опросов -->
+        <div class="surveys-section">
+            <h2>📋 Список опросов</h2>
+            <div class="surveys-table-container">
+                <table class="surveys-table" id="surveysTable">
+                    <thead>
+                        <tr>
+                            <th>Работник</th>
+                            <th>Предприятие</th>
+                            <th>Средний балл</th>
+                            <th>Дата</th>
+                            <th>Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody id="surveysTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

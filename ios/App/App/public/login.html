@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход в панель администратора - Опрос РЖД</title>
+    <link rel="stylesheet" href="login-styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <div class="login-logo-wrapper">
+                    <div class="login-logo-circle">
+                        <img src="images/RZDlogo.png" alt="РЖД" class="login-logo-img">
+                    </div>
+                </div>
+                <h1>Вход для администратора</h1>
+                <p>Опрос удовлетворенности работой в ОАО «РЖД»</p>
+            </div>
+            
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="username">Логин</label>
+                    <div class="input-group">
+                        <span class="input-icon">👤</span>
+                        <input type="text" id="username" placeholder="Введите логин" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Пароль</label>
+                    <div class="input-group">
+                        <span class="input-icon">🔒</span>
+                        <input type="password" id="password" placeholder="Введите пароль" required>
+                    </div>
+                </div>
+                
+                <div id="errorMessage" class="error-message" style="display: none;">
+                    Неверный логин или пароль
+                </div>
+                
+                <button type="submit" class="btn-login">Войти</button>
+            </form>
+            
+            <div class="login-footer">
+                <p>© ОАО «РЖД» 2024</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>
