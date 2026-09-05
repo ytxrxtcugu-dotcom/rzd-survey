@@ -3,22 +3,12 @@ workflows:
     name: iOS Build
     instance_type: mac_mini_m1
     max_build_duration: 60
-    environment:
-      groups:
-        - ios_credentials
-      vars:
-        XCODE_WORKSPACE: "ios/App/App.xcworkspace"
-        XCODE_SCHEME: "App"
     scripts:
       - name: Install dependencies
-        script: |
-          npm install
-      - name: Sync Capacitor
-        script: |
-          npx cap sync ios
+        script: npm install
       - name: Build iOS
         script: |
           cd ios/App
-          xcodebuild -workspace App.xcworkspace -scheme App -sdk iphoneos -configuration Debug -derivedDataPath build
+          xcodebuild -workspace App.xcworkspace -scheme App -sdk iphoneos -configuration Debug -derivedDataPath build CODE_SIGNING_ALLOWED=NO
     artifacts:
       - ios/App/build/Build/Products/Debug-iphoneos/*.app
