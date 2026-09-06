@@ -3,7 +3,8 @@
   "appName": "Опрос РЖД",
   "webDir": "frontend",
   "server": {
-    "androidScheme": "https",
-    "cleartext": true
+    "androidScheme": "http",
+    "cleartext": true,
+    "allowNavigation": ["*"]
   }
 }
