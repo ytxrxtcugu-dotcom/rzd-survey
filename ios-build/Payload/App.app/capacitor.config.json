@@ -1,0 +1,6 @@
+{
+	"appId": "com.rzd.survey",
+	"appName": "Опрос РЖД",
+	"webDir": "frontend",
+	"packageClassList": []
+}

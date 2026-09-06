@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>appleId</key>
+    <string></string>
+    <key>artistName</key>
+    <string></string>
+    <key>assetInfo</key>
+    <dict>
+        <key>fileExtension</key>
+        <string></string>
+        <key>flavor</key>
+        <string></string>
+    </dict>
+    <key>bundleDisplayName</key>
+    <string>Опрос РЖД</string>
+    <key>bundleShortVersionString</key>
+    <string>1.0</string>
+    <key>bundleVersion</key>
+    <string>1</string>
+    <key>copyright</key>
+    <string></string>
+    <key>drmVersionNumber</key>
+    <integer>0</integer>
+    <key>fileExtension</key>
+    <string>.app</string>
+    <key>genre</key>
+    <string></string>
+    <key>genreId</key>
+    <integer>0</integer>
+    <key>itemName</key>
+    <string>Опрос РЖД</string>
+    <key>kind</key>
+    <string>software</string>
+    <key>playlistArtistName</key>
+    <string></string>
+    <key>playlistName</key>
+    <string></string>
+    <key>price</key>
+    <integer>0</integer>
+    <key>rating</key>
+    <dict>
+        <key>content</key>
+        <string></string>
+        <key>label</key>
+        <string></string>
+        <key>rank</key>
+        <integer>0</integer>
+        <key>system</key>
+        <string></string>
+    </dict>
+    <key>releaseDate</key>
+    <string>2026-09-05T12:00:00Z</string>
+    <key>s</key>
+    <integer>143441</integer>
+    <key>softwareVersionBundleId</key>
+    <string>com.rzd.survey</string>
+    <key>sourceStorefront</key>
+    <string></string>
+    <key>storeCohort</key>
+    <string></string>
+    <key>storeFront</key>
+    <string></string>
+    <key>versionRestrictions</key>
+    <integer>0</integer>
+</dict>
+</plist>
